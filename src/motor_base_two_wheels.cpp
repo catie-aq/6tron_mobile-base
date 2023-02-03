@@ -10,6 +10,8 @@ MotorBaseTwoWheels::MotorBaseTwoWheels(float wheels_distance): _motorWheelsDista
 {
 }
 
+MotorBaseTwoWheels::~MotorBaseTwoWheels() = default;
+
 void MotorBaseTwoWheels::computeMotorSpeeds()
 {
     // Convert angle

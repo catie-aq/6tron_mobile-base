@@ -9,23 +9,25 @@
 
 namespace sixtron {
 
-class MotorBaseTwoWheels: MotorBase {
+class MotorBaseTwoWheels: public MotorBase {
 
 public:
     MotorBaseTwoWheels(float wheels_distance); // in meters, distance between the two wheels.
+
+    ~MotorBaseTwoWheels();
 
     void setTargetSpeeds(target_speeds speeds) override;
 
 protected:
     void computeMotorSpeeds();
 
+    float _targetSpeedMotorLeft = 0.0f;
+    float _targetSpeedMotorRight = 0.0f;
+
 private:
     float _motorWheelsDistance = 0.0f;
 
     target_speeds _target;
-
-    float _targetSpeedMotorLeft = 0.0f;
-    float _targetSpeedMotorRight = 0.0f;
 };
 
 } // namespace sixtron
