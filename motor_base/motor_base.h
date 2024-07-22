@@ -42,7 +42,7 @@ public:
         MotorBase_status _motor_base_status = motor_base_stop;
     }
 
-private:
+protected:
     MotorBase_status _motor_base_status = motor_base_stop;
 };
 
