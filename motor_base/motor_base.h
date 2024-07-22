@@ -18,6 +18,11 @@ struct target_speeds {
     float cmd_rot = 0.0f; // Rotational speed target [rad/s]
 };
 
+typedef enum {
+    motor_base_start = 0,
+    motor_base_stop = 1,
+} MotorBase_status;
+
 class MotorBase {
 
 public:
@@ -26,6 +31,19 @@ public:
     virtual void update() = 0; // Update motors outputs
 
     virtual void setTargetSpeeds(target_speeds speeds) = 0;
+
+    void start()
+    {
+        MotorBase_status _motor_base_status = motor_base_start;
+    }
+
+    void stop() // prevent the motor base to move or updating his PIDs
+    {
+        MotorBase_status _motor_base_status = motor_base_stop;
+    }
+
+protected:
+    MotorBase_status _motor_base_status = motor_base_stop;
 };
 
 } // namespace sixtron
