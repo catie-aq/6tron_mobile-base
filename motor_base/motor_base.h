@@ -34,12 +34,12 @@ public:
 
     void start()
     {
-        MotorBase_status _motor_base_status = motor_base_start;
+        _motor_base_status = motor_base_start;
     }
 
     void stop() // prevent the motor base to move or updating his PIDs
     {
-        MotorBase_status _motor_base_status = motor_base_stop;
+        _motor_base_status = motor_base_stop;
     }
 
 protected:
