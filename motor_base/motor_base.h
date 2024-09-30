@@ -2,8 +2,8 @@
  * Copyright (c) 2023, CATIE
  * SPDX-License-Identifier: Apache-2.0
  */
-#ifndef CATIE_SIXTRON_MOTORBASE_H
-#define CATIE_SIXTRON_MOTORBASE_H
+#ifndef CATIE_SIXTRON_MOBILE_BASE_H
+#define CATIE_SIXTRON_MOBILE_BASE_H
 
 #include <math.h>
 #include <stdint.h>
@@ -19,11 +19,11 @@ struct target_speeds {
 };
 
 typedef enum {
-    motor_base_start = 0,
-    motor_base_stop = 1,
-} MotorBase_status;
+    mobile_base_start = 0,
+    mobile_base_stop = 1,
+} MobileBase_status;
 
-class MotorBase {
+class MobileBase {
 
 public:
     virtual void init() = 0;
@@ -34,18 +34,18 @@ public:
 
     void start()
     {
-        _motor_base_status = motor_base_start;
+        _mobile_base_status = mobile_base_start;
     }
 
     void stop() // prevent the motor base to move or updating his PIDs
     {
-        _motor_base_status = motor_base_stop;
+        _mobile_base_status = mobile_base_stop;
     }
 
 protected:
-    MotorBase_status _motor_base_status = motor_base_stop;
+    MobileBase_status _mobile_base_status = mobile_base_stop;
 };
 
 } // namespace sixtron
 
-#endif // CATIE_SIXTRON_MOTORBASE_H
+#endif // CATIE_SIXTRON_MOBILE_BASE_H

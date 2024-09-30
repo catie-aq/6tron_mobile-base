@@ -2,19 +2,19 @@
  * Copyright (c) 2023, CATIE
  * SPDX-License-Identifier: Apache-2.0
  */
-#ifndef CATIE_SIXTRON_MOTORBASETWOWHEELS_H
-#define CATIE_SIXTRON_MOTORBASETWOWHEELS_H
+#ifndef CATIE_SIXTRON_MOBILE_BASE_DIFFERENTIAL_H
+#define CATIE_SIXTRON_MOBILE_BASE_DIFFERENTIAL_H
 
 #include "motor_base/motor_base.h"
 
 namespace sixtron {
 
-class MotorBaseTwoWheels: public MotorBase {
+class MobileBaseDifferential: public MobileBase {
 
 public:
-    MotorBaseTwoWheels(float wheels_distance); // in meters, distance between the two wheels.
+    MobileBaseDifferential(float wheels_distance); // in meters, distance between the two wheels.
 
-    ~MotorBaseTwoWheels();
+    ~MobileBaseDifferential();
 
     void setTargetSpeeds(target_speeds speeds) override;
 
@@ -32,4 +32,4 @@ private:
 
 } // namespace sixtron
 
-#endif // CATIE_SIXTRON_MOTORBASETWOWHEELS_H
+#endif // CATIE_SIXTRON_MOBILE_BASE_DIFFERENTIAL_H
