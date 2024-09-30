@@ -5,7 +5,7 @@
 #ifndef CATIE_SIXTRON_MOBILE_BASE_DIFFERENTIAL_H
 #define CATIE_SIXTRON_MOBILE_BASE_DIFFERENTIAL_H
 
-#include "motor_base/motor_base.h"
+#include "mobile_base/mobile_base.h"
 
 namespace sixtron {
 

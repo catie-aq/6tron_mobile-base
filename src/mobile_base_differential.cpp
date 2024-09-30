@@ -2,7 +2,7 @@
  * Copyright (c) 2023, CATIE
  * SPDX-License-Identifier: Apache-2.0
  */
-#include "motor_base/motor_base_two_wheels.h"
+#include "mobile_base/mobile_base_differential.h"
 
 namespace sixtron {
 
