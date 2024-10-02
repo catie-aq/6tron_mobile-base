@@ -38,9 +38,4 @@ void MobileBaseHolonomic::computeMotorSpeeds()
     }
 }
 
-void MobileBaseHolonomic::setTargetSpeeds(target_speeds speeds)
-{
-    _target = speeds;
-}
-
 } // namespace sixtron
