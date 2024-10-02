@@ -23,9 +23,4 @@ void MobileBaseDifferential::computeMotorSpeeds()
     _targetSpeedMotorRight = _target.cmd_lin + angle_translate_in_meter_per_s;
 }
 
-void MobileBaseDifferential::setTargetSpeeds(target_speeds speeds)
-{
-    _target = speeds;
-}
-
 } // namespace sixtron

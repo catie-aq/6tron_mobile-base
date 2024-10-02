@@ -30,7 +30,10 @@ public:
 
     virtual void update() = 0; // Update motors outputs
 
-    virtual void setTargetSpeeds(target_speeds speeds) = 0;
+    void setTargetSpeeds(target_speeds speeds)
+    {
+        _target = speeds;
+    }
 
     void start()
     {
@@ -44,6 +47,7 @@ public:
 
 protected:
     MobileBase_status _mobile_base_status = mobile_base_stop;
+    target_speeds _target;
 };
 
 } // namespace sixtron

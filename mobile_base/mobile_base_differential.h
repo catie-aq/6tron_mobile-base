@@ -16,8 +16,6 @@ public:
 
     ~MobileBaseDifferential();
 
-    void setTargetSpeeds(target_speeds speeds) override;
-
 protected:
     void computeMotorSpeeds();
 
@@ -26,8 +24,6 @@ protected:
 
 private:
     float _motorWheelsDistance = 0.0f;
-
-    target_speeds _target;
 };
 
 } // namespace sixtron

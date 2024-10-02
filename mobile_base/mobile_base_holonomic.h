@@ -28,18 +28,14 @@ public:
 
     ~MobileBaseHolonomic();
 
-    void setTargetSpeeds(target_speeds speeds) override;
-
-private:
-    float _distance_to_center = 0.0f;
-
-    target_speeds _target;
-
 protected:
     void computeMotorSpeeds();
     int _number_of_wheels;
     float _offset_angle;
     Matrix _wheels_speeds;
+
+private:
+    float _distance_to_center = 0.0f;
 };
 
 } // namespace sixtron
