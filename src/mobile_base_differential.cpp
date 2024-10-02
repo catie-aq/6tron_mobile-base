@@ -6,7 +6,8 @@
 
 namespace sixtron {
 
-MobileBaseDifferential::MobileBaseDifferential(float wheels_distance): _motorWheelsDistance(wheels_distance)
+MobileBaseDifferential::MobileBaseDifferential(float wheels_distance):
+        _motorWheelsDistance(wheels_distance)
 {
 }
 
