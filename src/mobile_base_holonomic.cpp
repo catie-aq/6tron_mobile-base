@@ -14,14 +14,8 @@ MobileBaseHolonomic::MobileBaseHolonomic(
 
     _number_of_wheels = number_of_wheels;
     _distance_to_center = distance_to_center;
-    _wheels_speeds.column = 1;
     _offset_angle = offset;
-    _wheels_speeds.line = number_of_wheels;
-
-    std::vector<std::vector<float>> init_vector(
-            _wheels_speeds.line, std::vector<float>(_wheels_speeds.column));
-
-    _wheels_speeds.Matrice = init_vector;
+    _wheels_speeds = newMatrix(number_of_wheels, 1);
 }
 
 MobileBaseHolonomic::~MobileBaseHolonomic() = default;
@@ -29,7 +23,7 @@ MobileBaseHolonomic::~MobileBaseHolonomic() = default;
 void MobileBaseHolonomic::computeMotorSpeeds()
 {
     for (int k = 0; k < _number_of_wheels; k++) {
-        _wheels_speeds.Matrice[k][0]
+        _wheels_speeds.data[k][0]
                 = -sinf(float(k) * 2.0f * float(M_PI) / float(_number_of_wheels) + _offset_angle)
                         * _target.cmd_lin
                 + cosf(float(k) * 2.0f * float(M_PI) / float(_number_of_wheels) + _offset_angle)
